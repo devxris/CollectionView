@@ -37,6 +37,9 @@ class IconCollectionViewController: UICollectionViewController, UICollectionView
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
 		
+		if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+			flowLayout.estimatedItemSize = CGSize(width: 1, height: 1)
+		}
 	}
 	
 	// MARK: UICollectionViewDataSource and UICollectionViewDelegate
@@ -49,11 +52,5 @@ class IconCollectionViewController: UICollectionViewController, UICollectionView
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as! IconCell
 		cell.icon = iconSet[indexPath.item]
 		return cell
-	}
-	
-	// MARK: UICollectionViewDelegateFlowLayout
-	
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return CGSize(width: 100, height: 150)
 	}
 }
