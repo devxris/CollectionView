@@ -18,6 +18,7 @@ class IconCell: UICollectionViewCell {
 			guard let icon = icon else { return }
 			iconImageView.image = UIImage(named: icon.name)
 			priceLabel.text = "$\(icon.price)"
+			backgroundView = icon.isFeatured ? UIImageView(image: #imageLiteral(resourceName: "feature-bg")) : nil
 		}
 	}
 }
