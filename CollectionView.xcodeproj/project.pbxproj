@@ -14,6 +14,7 @@
 		453628931F83291000023DCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 453628911F83291000023DCF /* LaunchScreen.storyboard */; };
 		4536289E1F832B0200023DCF /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4536289D1F832B0200023DCF /* IconCell.swift */; };
 		453628A11F832FC800023DCF /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453628A01F832FC800023DCF /* Icon.swift */; };
+		453628A31F8353AD00023DCF /* IconDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453628A21F8353AD00023DCF /* IconDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		453628941F83291000023DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4536289D1F832B0200023DCF /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		453628A01F832FC800023DCF /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		453628A21F8353AD00023DCF /* IconDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				453628881F83291000023DCF /* AppDelegate.swift */,
 				4536288A1F83291000023DCF /* IconCollectionViewController.swift */,
+				453628A21F8353AD00023DCF /* IconDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				4536288B1F83291000023DCF /* IconCollectionViewController.swift in Sources */,
 				453628891F83291000023DCF /* AppDelegate.swift in Sources */,
 				453628A11F832FC800023DCF /* Icon.swift in Sources */,
+				453628A31F8353AD00023DCF /* IconDetailViewController.swift in Sources */,
 				4536289E1F832B0200023DCF /* IconCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

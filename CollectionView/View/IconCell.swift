@@ -16,7 +16,7 @@ class IconCell: UICollectionViewCell {
 	var icon: Icon? {
 		didSet {
 			guard let icon = icon else { return }
-			iconImageView.image = UIImage(named: icon.name)
+			iconImageView.image = UIImage(named: icon.imageName)
 			priceLabel.text = "$\(icon.price)"
 			backgroundView = icon.isFeatured ? UIImageView(image: #imageLiteral(resourceName: "feature-bg")) : nil
 		}
