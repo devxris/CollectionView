@@ -53,6 +53,39 @@ class IconCollectionViewController: UICollectionViewController, UICollectionView
 		cell.icon = iconSet[indexPath.item]
 		return cell
 	}
+	override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		guard shareEnabled else { return }
+		let selectedIcon = iconSet[indexPath.item]
+		selectedIcons.append(selectedIcon)
+	}
+	override func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+		guard shareEnabled else { return }
+		let deselectedIcon = iconSet[indexPath.item]
+		if let index = selectedIcons.index(where: { $0.name == deselectedIcon.name })  {
+			selectedIcons.remove(at: index)
+		}
+	}
+	
+	private var shareEnabled = false
+	private var selectedIcons = [Icon]()
+	@IBOutlet weak var shareButton: UIBarButtonItem!
+	@IBAction func share(_ sender: UIBarButtonItem) {
+		if shareEnabled {
+			if let indexPaths = collectionView?.indexPathsForSelectedItems {
+				indexPaths.forEach { collectionView?.deselectItem(at: $0, animated: true) }
+			}
+			selectedIcons.removeAll()
+			shareEnabled = false
+			collectionView?.allowsMultipleSelection = false
+			shareButton.title = "Share"
+			shareButton.style = .plain
+		} else {
+			shareEnabled = true
+			collectionView?.allowsMultipleSelection = true
+			shareButton.title = "Done"
+			shareButton.style = .done
+		}
+	}
 	
 	// MARK: Navigation
 	
@@ -63,6 +96,15 @@ class IconCollectionViewController: UICollectionViewController, UICollectionView
 			detailViewController.icon = iconSet[selectedIndexPaths[0].item]
 			collectionView?.deselectItem(at: selectedIndexPaths[0], animated: true)
 		}
+	}
+	
+	override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+		if identifier == "ShowDetail" {
+			if shareEnabled {
+				return false
+			}
+		}
+		return true
 	}
 	
 	@IBAction func unwind(segue: UIStoryboardSegue) {

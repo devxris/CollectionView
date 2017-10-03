@@ -19,6 +19,7 @@ class IconCell: UICollectionViewCell {
 			iconImageView.image = UIImage(named: icon.imageName)
 			priceLabel.text = "$\(icon.price)"
 			backgroundView = icon.isFeatured ? UIImageView(image: #imageLiteral(resourceName: "feature-bg")) : nil
+			selectedBackgroundView = UIImageView(image: #imageLiteral(resourceName: "icon-selected"))
 		}
 	}
 }
