@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IconCollectionViewController: UICollectionViewController {
+class IconCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
 
 	private var iconSet: [Icon] = [ Icon(name: "candle", price: 3.99, isFeatured: false),
 	                                Icon(name: "cat", price: 2.99, isFeatured: true),
@@ -36,6 +36,7 @@ class IconCollectionViewController: UICollectionViewController {
 		
 		navigationController?.navigationBar.prefersLargeTitles = true
 		navigationItem.largeTitleDisplayMode = .always
+		
 	}
 	
 	// MARK: UICollectionViewDataSource and UICollectionViewDelegate
@@ -48,5 +49,11 @@ class IconCollectionViewController: UICollectionViewController {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as! IconCell
 		cell.icon = iconSet[indexPath.item]
 		return cell
+	}
+	
+	// MARK: UICollectionViewDelegateFlowLayout
+	
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		return CGSize(width: 100, height: 150)
 	}
 }

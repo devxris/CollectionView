@@ -30,14 +30,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gNW-MT-ksk">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gNW-MT-ksk">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="115" id="u5i-0c-OfU"/>
-                                            </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0E-o5-abR">
-                                            <rect key="frame" x="0.0" y="116" width="100" height="34"/>
+                                            <rect key="frame" x="0.0" y="115" width="100" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="fM2-Ub-M5I"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -46,12 +46,12 @@
                                 </view>
                                 <constraints>
                                     <constraint firstItem="gNW-MT-ksk" firstAttribute="leading" secondItem="1bQ-Zi-dNR" secondAttribute="leading" id="2E8-6B-Xjz"/>
-                                    <constraint firstAttribute="bottom" secondItem="O0E-o5-abR" secondAttribute="bottom" id="EMV-2m-0OB"/>
                                     <constraint firstAttribute="trailing" secondItem="O0E-o5-abR" secondAttribute="trailing" id="JyQ-Ej-k1h"/>
                                     <constraint firstItem="gNW-MT-ksk" firstAttribute="top" secondItem="1bQ-Zi-dNR" secondAttribute="top" id="QFr-my-VXJ"/>
-                                    <constraint firstItem="O0E-o5-abR" firstAttribute="top" secondItem="gNW-MT-ksk" secondAttribute="bottom" constant="1" id="QhJ-Xg-IiS"/>
+                                    <constraint firstItem="O0E-o5-abR" firstAttribute="top" secondItem="gNW-MT-ksk" secondAttribute="bottom" id="gS8-TN-Btk"/>
                                     <constraint firstItem="O0E-o5-abR" firstAttribute="leading" secondItem="1bQ-Zi-dNR" secondAttribute="leading" id="iFh-mo-bSd"/>
                                     <constraint firstAttribute="trailing" secondItem="gNW-MT-ksk" secondAttribute="trailing" id="t9D-HI-hA0"/>
+                                    <constraint firstAttribute="bottom" secondItem="O0E-o5-abR" secondAttribute="bottom" id="wYR-fI-Opa"/>
                                 </constraints>
                                 <size key="customSize" width="100" height="150"/>
                                 <connections>
